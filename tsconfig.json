@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "es2016"
+    ],
+    "allowJs": true,
+    "checkJs": false,
+    "importHelpers": true,
+    "strict": true,
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "alwaysStrict": false,
+    "noImplicitReturns": true,
+    "allowUmdGlobalAccess": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {},
+    "types": [
+      "node",
+      "@sm003/autojs6-dts/declarations/android.d.ts",
+      "@sm003/autojs6-dts/declarations/collections.d.ts",
+      "@sm003/autojs6-dts/declarations/libraries.d.ts",
+      "@sm003/autojs6-dts/declarations/index.d.ts"
+    ]
+  },
+  "include": [
+    "./src/**/*",
+    "./lib/**/*"
+  ],
+  "exclude": [
+    "./.vscode/",
+    "./build/",
+    "./dist/",
+    "./src/assets/",
+    "./src/statics/"
+  ],
+  "extends": "@tsconfig/recommended/tsconfig.json",
+  "compileOnSave": true
+}
