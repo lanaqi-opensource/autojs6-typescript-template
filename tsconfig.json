@@ -14,7 +14,7 @@
     "noImplicitReturns": true,
     "allowUmdGlobalAccess": true,
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": false,
+    "emitDecoratorMetadata": false, // 注意：不支持该配置
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {},
