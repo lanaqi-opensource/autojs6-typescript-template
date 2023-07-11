@@ -1,6 +1,6 @@
 import { Options as TsupOptions } from 'tsup';
 
-import { AutoxDeployAction, AutoxDeployExecutor } from './AutoxDeployExecutor';
+import { Autojs6DeployAction, Autojs6DeployExecutor } from './Autojs6DeployExecutor';
 
 // Tsup 运行环境
 export declare type TsupNodeEnv = 'production' | 'development';
@@ -33,11 +33,11 @@ export class TsupConfigBuilder {
     private overrideOptions: TsupOptions;
 
     // 部署执行器
-    private deployExecutor: AutoxDeployExecutor;
+    private deployExecutor: Autojs6DeployExecutor;
 
     public constructor(overrideOptions: TsupOptions) {
         this.overrideOptions = overrideOptions;
-        this.deployExecutor = new AutoxDeployExecutor();
+        this.deployExecutor = new Autojs6DeployExecutor();
     }
 
     // 获取覆盖环境
@@ -75,10 +75,10 @@ export class TsupConfigBuilder {
     }
 
     // 获取部署动作
-    private getDeployAction(): AutoxDeployAction {
+    private getDeployAction(): Autojs6DeployAction {
         const deployAction = this.getOverrideEnv(TsupConfigBuilder.DEPLOY_ACTION_KEY);
         if (deployAction) {
-            return deployAction as AutoxDeployAction;
+            return deployAction as Autojs6DeployAction;
         } else {
             return 'none';
         }

@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "lib": [
-      "es2016"
+      "ES2015"
     ],
     "allowJs": true,
     "checkJs": false,
@@ -14,7 +14,7 @@
     "noImplicitReturns": true,
     "allowUmdGlobalAccess": true,
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
+    "emitDecoratorMetadata": false,
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {},

@@ -1,13 +1,11 @@
-// https://github.com/kkevsekk1/AutoxDeployWebpackPlugin/blob/main/index.js
-
 import nodeHttp from 'http';
 import nodePath from 'path';
 
-// Autox 部署动作
-export declare type AutoxDeployAction = 'none' | 'both' | 'save' | 'rerun';
+// Autojs6 部署动作
+export declare type Autojs6DeployAction = 'none' | 'both' | 'save' | 'rerun';
 
-// Autox 部署执行器
-export class AutoxDeployExecutor {
+// Autojs6 部署执行器
+export class Autojs6DeployExecutor {
 
     // 输出目录值
     private static DIST_PATH: string = './dist';
@@ -38,12 +36,12 @@ export class AutoxDeployExecutor {
 
     // 获取输出目录值
     private getDistPath(deployName: string): string {
-        return `/${nodePath.resolve(AutoxDeployExecutor.DIST_PATH, deployName)}`;
+        return `/${nodePath.resolve(Autojs6DeployExecutor.DIST_PATH, deployName)}`;
     }
 
     // 获取输出主文件值
     private getMainPath(deployName: string): string {
-        return `/${nodePath.resolve(AutoxDeployExecutor.DIST_PATH, deployName, AutoxDeployExecutor.MAIN_PATH)}`;
+        return `/${nodePath.resolve(Autojs6DeployExecutor.DIST_PATH, deployName, Autojs6DeployExecutor.MAIN_PATH)}`;
     }
 
     // 执行重新运行命令
@@ -66,7 +64,7 @@ export class AutoxDeployExecutor {
     }
 
     // 执行部署项目
-    public execDeployProject(deployAction: AutoxDeployAction, projectName?: string): void {
+    public execDeployProject(deployAction: Autojs6DeployAction, projectName?: string): void {
         const deployName: string = this.resolveDeployName(projectName);
         switch (deployAction) {
             case 'save':

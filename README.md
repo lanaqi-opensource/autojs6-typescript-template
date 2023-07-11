@@ -65,8 +65,8 @@
 ## 使用步骤
 
 1. 复制工程目录所有到你的项目中。
-2. 打开 VsCode 开启服务并监听 ADB 设备。
-3. 使用 Autox.js 连接 VsCode 监听。
+2. 打开 VsCode 开启服务。
+3. 使用 Autojs6 连接 VsCode 监听。
 4. 运行项目中 scripts 即可。
 5. 使用资源文件时，需先部署，否则无法读取（可以修改 DEPLOY_ACTION 为 both 值）。
 
