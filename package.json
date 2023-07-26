@@ -4,6 +4,8 @@
   "scripts": {
     "build:dev": "tsup --env.NODE_ENV=development",
     "build:prod": "tsup --env.NODE_ENV=production",
+    "run:dev": "tsup --env.NODE_ENV=development --env.DEPLOY_ACTION=run",
+    "run:prod": "tsup --env.NODE_ENV=production --env.DEPLOY_ACTION=run",
     "rerun:dev": "tsup --env.NODE_ENV=development --env.DEPLOY_ACTION=rerun",
     "rerun:prod": "tsup --env.NODE_ENV=production --env.DEPLOY_ACTION=rerun",
     "save:dev": "tsup --env.NODE_ENV=development --env.DEPLOY_ACTION=save",

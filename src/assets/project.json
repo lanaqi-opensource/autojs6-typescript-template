@@ -1,6 +1,6 @@
 {
     "name": "@lanaqi/autojs6-typescript-template",
-    "versionName": "0.0.1-alpha.1",
+    "versionName": "0.0.1",
     "versionCode": 1,
     "packageName": "com.lanaqi.autojs6.template",
     "main": "main.js",

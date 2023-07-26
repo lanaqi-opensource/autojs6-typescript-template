@@ -1,8 +1,10 @@
+// https://github.com/SuperMonster003/AutoJs6-VSCode-Extension/issues/6#issuecomment-1620894339
+
 import nodeHttp from 'http';
 import nodePath from 'path';
 
 // Autojs6 部署动作
-export declare type Autojs6DeployAction = 'none' | 'both' | 'save' | 'rerun';
+export declare type Autojs6DeployAction = 'none' | 'both' | 'save' | 'rerun' | 'run';
 
 // Autojs6 部署执行器
 export class Autojs6DeployExecutor {
@@ -44,13 +46,18 @@ export class Autojs6DeployExecutor {
         return `/${nodePath.resolve(Autojs6DeployExecutor.DIST_PATH, deployName, Autojs6DeployExecutor.MAIN_PATH)}`;
     }
 
-    // 执行重新运行命令
-    private execRerunCmd(deployName: string): void {
+    // 执行运行项目命令
+    private execRunProject(deployName: string): void {
+        this.sendDeployCmd('runProject', this.getMainPath(deployName), deployName);
+    }
+
+    // 执行重新运行项目命令
+    private execRerunProject(deployName: string): void {
         this.sendDeployCmd('rerunProject', this.getMainPath(deployName), deployName);
     }
 
-    // 执行保存命令
-    private execSaveCmd(deployName: string): void {
+    // 执行保存项目命令
+    private execSaveProject(deployName: string): void {
         this.sendDeployCmd('saveProject', this.getDistPath(deployName), deployName);
     }
 
@@ -68,17 +75,21 @@ export class Autojs6DeployExecutor {
         const deployName: string = this.resolveDeployName(projectName);
         switch (deployAction) {
             case 'save':
-                this.execSaveCmd(deployName);
-                console.info('部署执行器: %s -> 完成保存！', deployName);
+                this.execSaveProject(deployName);
+                console.info('部署执行器: %s -> 完成保存项目！', deployName);
                 break;
             case 'rerun':
-                this.execRerunCmd(deployName);
-                console.info('部署执行器: %s -> 完成重新运行！', deployName);
+                this.execRerunProject(deployName);
+                console.info('部署执行器: %s -> 完成重新运行项目！', deployName);
+                break;
+            case 'run':
+                this.execRunProject(deployName);
+                console.info('部署执行器: %s -> 完成运行项目！', deployName);
                 break;
             case 'both':
-                this.execSaveCmd(deployName);
-                this.execRerunCmd(deployName);
-                console.info('部署执行器: %s -> 完成保存并重新运行！', deployName);
+                this.execSaveProject(deployName);
+                this.execRerunProject(deployName);
+                console.info('部署执行器: %s -> 完成保存并重新运行项目！', deployName);
                 break;
             case 'none':
             default:
